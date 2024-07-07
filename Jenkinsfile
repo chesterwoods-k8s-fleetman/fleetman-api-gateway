@@ -25,8 +25,8 @@ pipeline {
 
       stage('Build and Push Image') {
          steps {
-           //shell('systemctl start docker')
-           sh 'systemctl start docker' 
+           shell('systemctl start docker')
+           //sh 'systemctl start docker' 
            sh 'docker image build -t ${REPOSITORY_TAG} .'
          }
       }
