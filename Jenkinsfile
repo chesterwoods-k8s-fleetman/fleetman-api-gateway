@@ -25,7 +25,7 @@ pipeline {
 
       stage('Build and Push Image') {
          steps {
-            sh 'docker-compose up'
+            sh '"docker-compose up"'
            sh 'docker image build -t ${REPOSITORY_TAG} .'
          }
       }
