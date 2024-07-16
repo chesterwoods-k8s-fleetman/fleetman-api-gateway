@@ -1,6 +1,5 @@
 pipeline {
-   agent any
-   }
+   agent any   
 
    environment {
      // You must set the following environment variables
