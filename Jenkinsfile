@@ -1,5 +1,9 @@
 pipeline {
-   agent any   
+   agent{
+      kubernetes{
+         
+      }
+   } 
 
    environment {
      // You must set the following environment variables
