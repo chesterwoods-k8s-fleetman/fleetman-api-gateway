@@ -1,8 +1,5 @@
 pipeline {
-   agent {
-      kubernetes {
-         
-      }
+   agent any
    }
 
    environment {
