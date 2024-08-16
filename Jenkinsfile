@@ -1,9 +1,5 @@
 pipeline {
-   agent{
-      kubernetes{
-         
-      }
-   } 
+   agent any
 
    environment {
      // You must set the following environment variables
@@ -29,15 +25,13 @@ pipeline {
 
       stage('Build and Push Image') {
          steps {
-           shell('systemctl start docker')
-           //sh 'systemctl start docker' 
            sh 'docker image build -t ${REPOSITORY_TAG} .'
          }
       }
 
       stage('Deploy to Cluster') {
           steps {
-            sh 'envsubst < ${WORKSPACE}/deploy.yaml | kubectl apply --validate=false -f -'
+                    sh 'envsubst < ${WORKSPACE}/deploy.yaml | kubectl apply -f -'
           }
       }
    }
